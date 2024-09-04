@@ -1,113 +1,373 @@
-import Image from "next/image";
+// "use client"
+// import Dropdown from "@/components/Dropdown/dropdown";
+// import Sidebar from "@/components/Sidebar/Sidebar";
+// import OrderTabs from "@/components/Tabs/tabs";
+// import { Button } from "@/components/ui/button";
+// import Image from "next/image";
+// import { useState } from "react";
+// import { Input } from "@/components/ui/input"
+// import { ArrowDownUp, Mail } from "lucide-react";
+// import { CustomTable } from "@/components/Table/table";
+
+// interface Order {
+//   username: string;
+//   product: string;
+//   variation: string;
+//   price: string;
+//   paymentMethod: string;
+//   status: string;
+//   countdown: string;
+//   shippingChannel: string;
+//   actions: React.ReactNode;
+//   [key: string]: React.ReactNode;
+// }
+
+// const orders: Order[] = [
+//   {
+//     username: 'edivanialino110',
+//     product: 'Suéter Masculino Tricot Lã Quentinho para o Inverno x1',
+//     variation: 'Vermelho Bordô, Único (38 ao 46)',
+//     price: 'R$49,90',
+//     paymentMethod: 'Pix',
+//     status: 'To ship',
+//     countdown: 'To avoid late shipment, please arrange drop-off / arrange pickup by 04/09/2024',
+//     shippingChannel: 'Shopee Xpress',
+//     actions: (
+//       <>
+//         <Button variant="link" className="text-blue-500">Arrange Shipment</Button>
+//         <Button variant="link" className="text-blue-500">Upload Invoice</Button>
+//       </>
+//     ),
+//   },
+//   {
+//     username: '1302e_b3di',
+//     product: 'Blusinha Regata Cropped Modal Trança Moda Verão x2',
+//     variation: 'Preto, Único (36 ao 42)',
+//     price: 'R$59,80',
+//     paymentMethod: 'Pix',
+//     status: 'To ship',
+//     countdown: 'To avoid late shipment, please arrange drop-off / arrange pickup by 04/09/2024',
+//     shippingChannel: 'Shopee Xpress',
+//     actions: (
+//       <>
+//         <Button variant="link" className="text-blue-500">Arrange Shipment</Button>
+//         <Button variant="link" className="text-blue-500">View Invoice</Button>
+//       </>
+//     ),
+//   },
+// ];
+
+
+// export default function Home() {
+//   const [activeTab, setActiveTab] = useState(0);
+
+//   const handleTabChange = (tabIndex: number) => {
+//     setActiveTab(tabIndex);
+//     console.log(`Selected Tab: ${tabIndex}`);
+//   };
+//   const handleSelect = (item: string) => {
+//     console.log(`Selected item: ${item}`);
+
+//   };
+
+//   const items = ['Option 1', 'Option 2', 'Option 3'];
+
+
+
+
+//   const columns = [
+//     {
+//       header: 'Product(s)', accessor: 'product', render: (order: Order) => (
+//         <div className="flex items-center">
+//           <div className="ml-4">
+//             <div className="text-sm font-medium leading-5 text-gray-900">{order.username}</div>
+//             <div className="text-sm leading-5 text-gray-500">{order.product}</div>
+//             <div className="text-sm leading-5 text-gray-500">{order.variation}</div>
+//           </div>
+//         </div>
+//       )
+//     },
+//     {
+//       header: 'Total Price', accessor: 'price', render: (order: Order) => (
+//         <div>
+//           <div className="text-sm leading-5 text-gray-900">{order.price}</div>
+//           <div className="text-sm leading-5 text-gray-500">{order.paymentMethod}</div>
+//         </div>
+//       )
+//     },
+//     {
+//       header: 'Status', accessor: 'status', render: (order: Order) => (
+//         <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+//           {order.status}
+//         </span>
+//       )
+//     },
+//     { header: 'Countdown', accessor: 'countdown' },
+//     { header: 'Shipping Channel', accessor: 'shippingChannel' },
+//     { header: 'Actions', accessor: 'actions' },
+//   ];
+
+//   return (
+//     <div className="flex gap-11 " >
+//       <>
+//         <Sidebar />
+//       </>
+//       <div className="mt-20  mr-10 w-full">
+//         <OrderTabs tabs={['All', 'Unpaid', 'To Ship', 'Shipped']} onTabChange={handleTabChange} >
+//           <div>All Orders Content</div>
+//           <div>Unpaid Orders Content</div>
+//           <div>To Ship Orders Content</div>
+//           <div>Shipped Orders Content</div>
+//         </OrderTabs>
+
+//         <div className=" flex gap-4 mt-5 w-[50%]">
+//           <p>Order Status</p>
+//           <OrderTabs tabs={['All', 'To process', 'processed']} onTabChange={handleTabChange} rounded={true} >
+//             <div className="rounded-md">All</div>
+//             <div>To process </div>
+//             <div>processed</div>
+//           </OrderTabs>
+//         </div>
+//         <div className="pt-4 flex justify-between ">
+//           <div className="flex border border-gray-300 rounded-sm ">
+//             <Dropdown items={items} onSelect={handleSelect} /><Input type="text" placeholder="Input Order ID" className="w-[30%] border-none" />
+//           </div>
+//           <div className="flex gap-5">
+//             <Dropdown items={items} onSelect={handleSelect} />
+//             <Button variant={'outline'}>Apply</Button>
+//             <Button variant={'outline'}>Reset</Button>
+//           </div>
+//         </div>
+
+
+//         <div className="mt-10 flex justify-between items-center ">
+//           <p className="text-xl">Orders (180)</p>
+//           <div className="flex gap-2">
+//             <Button variant={'outline'}>
+//               <ArrowDownUp className="mr-2 h-4 w-4" /> sort By
+//             </Button>
+//             <Button variant={'outline'}>
+//               <ArrowDownUp className="mr-2 h-4 w-4" /> Mass Upload Invoice
+//             </Button>
+//             <Button variant={'outline'}>
+//               <ArrowDownUp className="mr-2 h-4 w-4" /> Mass Ship
+//             </Button>
+//           </div>
+
+//         </div>
+
+
+//         <div className="mt-10">
+//         <CustomTable<Order> data={orders} columns={columns} caption="Order Summary" />
+//         </div>
+
+//       </div>
+
+
+
+//     </div>
+//   );
+// }
+
+"use client";
+import Dropdown from "@/components/Dropdown/dropdown";
+import Sidebar from "@/components/Sidebar/Sidebar";
+import OrderTabs from "@/components/Tabs/tabs";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { Input } from "@/components/ui/input";
+import { ArrowDownUp } from "lucide-react";
+import { CustomTable } from "@/components/Table/table";
+
+interface Order {
+  username: string;
+  product: string;
+  variation: string;
+  price: string;
+  paymentMethod: string;
+  status: string;
+  countdown: string;
+  shippingChannel: string;
+  actions: React.ReactNode;
+  [key: string]: React.ReactNode;
+}
+
+const orders: Order[] = [
+  {
+    username: "edivanialino110",
+    product: "Suéter Masculino Tricot Lã Quentinho para o Inverno x1",
+    variation: "Vermelho Bordô, Único (38 ao 46)",
+    price: "R$49,90",
+    paymentMethod: "Pix",
+    status: "To ship",
+    countdown:
+      "To avoid late shipment, please arrange drop-off / arrange pickup by 04/09/2024",
+    shippingChannel: "Shopee Xpress",
+    actions: (
+      <>
+        <Button variant="link" className="text-blue-500">
+          Arrange Shipment
+        </Button>
+        <Button variant="link" className="text-blue-500">
+          Upload Invoice
+        </Button>
+      </>
+    ),
+  },
+  {
+    username: "1302e_b3di",
+    product: "Blusinha Regata Cropped Modal Trança Moda Verão x2",
+    variation: "Preto, Único (36 ao 42)",
+    price: "R$59,80",
+    paymentMethod: "Pix",
+    status: "To ship",
+    countdown:
+      "To avoid late shipment, please arrange drop-off / arrange pickup by 04/09/2024",
+    shippingChannel: "Shopee Xpress",
+    actions: (
+      <>
+        <Button variant="link" className="text-blue-500">
+          Arrange Shipment
+        </Button>
+        <Button variant="link" className="text-blue-500">
+          View Invoice
+        </Button>
+      </>
+    ),
+  },
+  
+];
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState(0);
+
+  const handleTabChange = (tabIndex: number) => {
+    setActiveTab(tabIndex);
+  };
+
+  const handleSelect = (item: string) => {
+    console.log(`Selected item: ${item}`);
+  };
+
+  const items = ["Option 1", "Option 2", "Option 3"];
+
+  const columns = [
+    {
+      header: "Product(s)",
+      accessor: "product",
+      render: (order: Order) => (
+        <div className="flex items-center">
+          <div className="ml-4">
+            <div className="text-sm font-medium leading-5 text-gray-900">
+              {order.username}
+            </div>
+            <div className="text-sm leading-5 text-gray-500">
+              {order.product}
+            </div>
+            <div className="text-sm leading-5 text-gray-500">
+              {order.variation}
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      header: "Total Price",
+      accessor: "price",
+      render: (order: Order) => (
+        <div>
+          <div className="text-sm leading-5 text-gray-900">{order.price}</div>
+          <div className="text-sm leading-5 text-gray-500">
+            {order.paymentMethod}
+          </div>
+        </div>
+      ),
+    },
+    {
+      header: "Status",
+      accessor: "status",
+      render: (order: Order) => (
+        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+          {order.status}
+        </span>
+      ),
+    },
+    { header: "Countdown", accessor: "countdown" },
+    { header: "Shipping Channel", accessor: "shippingChannel" },
+    { header: "Actions", accessor: "actions" },
+  ];
+
+  const getFilteredOrders = (): Order[] => {
+    if (activeTab === 1) return orders.filter(order => order.status === "Unpaid");
+    if (activeTab === 2) return orders.filter(order => order.status === "To ship");
+    if (activeTab === 3) return orders.filter(order => order.status === "Shipped");
+    return orders;
+  };
+
+  const filteredOrders = getFilteredOrders();
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="flex gap-11">
+      <Sidebar />
+      <div className="mt-20 mr-10 w-full">
+        <OrderTabs
+          tabs={["All", "Unpaid", "To Ship", "Shipped"]}
+          onTabChange={handleTabChange}
+        >
+          <div>All Orders Content</div>
+          <div>Unpaid Orders Content</div>
+          <div>To Ship Orders Content</div>
+          <div>Shipped Orders Content</div>
+        </OrderTabs>
+
+        <div className="flex gap-4 mt-5 w-[50%]">
+          <p>Order Status</p>
+          <OrderTabs
+            tabs={["All", "To process", "processed"]}
+            onTabChange={handleTabChange}
+            rounded={true}
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+            <div className="rounded-md">All</div>
+            <div>To process</div>
+            <div>processed</div>
+          </OrderTabs>
+        </div>
+
+        <div className="pt-4 flex justify-between">
+          <div className="flex border border-gray-300 rounded-sm">
+            <Dropdown items={items} onSelect={handleSelect} />
+            <Input
+              type="text"
+              placeholder="Input Order ID"
+              className="w-[30%] border-none"
             />
-          </a>
+          </div>
+          <div className="flex gap-5">
+            <Dropdown items={items} onSelect={handleSelect} />
+            <Button variant={"outline"}>Apply</Button>
+            <Button variant={"outline"}>Reset</Button>
+          </div>
+        </div>
+
+        <div className="mt-10 flex justify-between items-center">
+          <p className="text-xl">Orders (180)</p>
+          <div className="flex gap-2">
+            <Button variant={"outline"}>
+              <ArrowDownUp className="mr-2 h-4 w-4" /> sort By
+            </Button>
+            <Button variant={"outline"}>
+              <ArrowDownUp className="mr-2 h-4 w-4" /> Mass Upload Invoice
+            </Button>
+            <Button variant={"outline"}>
+              <ArrowDownUp className="mr-2 h-4 w-4" /> Mass Ship
+            </Button>
+          </div>
+        </div>
+
+        <div className="mt-10">
+          <CustomTable<Order> data={filteredOrders} columns={columns} caption="Order Summary" />
         </div>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
