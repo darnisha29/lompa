@@ -37,9 +37,8 @@ const SidebarSection: React.FC<SidebarSectionProps> = ({ title, icon, links }) =
             <li key={index} className="py-2">
               <a
                 href={link.href}
-                className={`${
-                  link.isActive ? "text-red-500" : "text-gray-700 hover:text-gray-900"
-                }`}
+                className={`${link.isActive ? "text-red-500" : "text-gray-700 hover:text-gray-900"
+                  }`}
               >
                 {link.name}
               </a>

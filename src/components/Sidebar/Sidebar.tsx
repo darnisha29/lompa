@@ -16,7 +16,7 @@ const Sidebar = () => {
     },
     {
       title: "Product",
-      icon: "📦", 
+      icon: "📦",
       links: [
         { name: "My Products", href: "#" },
         { name: "Add New Product", href: "#" },
@@ -25,7 +25,7 @@ const Sidebar = () => {
     },
     {
       title: "Marketing Centre",
-      icon: "🏷️", 
+      icon: "🏷️",
       links: [
         { name: "Marketing Centre", href: "#" },
         { name: "Shopee Ads", href: "#" },
@@ -37,19 +37,19 @@ const Sidebar = () => {
         { name: "Campaign", href: "#" },
       ],
     }, {
-        title: "Marketing Centre",
-        icon: "🏷️", 
-        links: [
-          { name: "Marketing Centre", href: "#" },
-          { name: "Shopee Ads", href: "#" },
-          { name: "Affiliate Marketing", href: "#" },
-          { name: "Live", href: "#" },
-          { name: "Discount", href: "#" },
-          { name: "My Shop's Flash Sale", href: "#" },
-          { name: "Vouchers", href: "#" },
-          { name: "Campaign", href: "#" },
-        ],
-      },
+      title: "Marketing Centre",
+      icon: "🏷️",
+      links: [
+        { name: "Marketing Centre", href: "#" },
+        { name: "Shopee Ads", href: "#" },
+        { name: "Affiliate Marketing", href: "#" },
+        { name: "Live", href: "#" },
+        { name: "Discount", href: "#" },
+        { name: "My Shop's Flash Sale", href: "#" },
+        { name: "Vouchers", href: "#" },
+        { name: "Campaign", href: "#" },
+      ],
+    },
   ];
 
   return (
